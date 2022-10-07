@@ -28,7 +28,6 @@ public class MainPageTests extends TestsConfiguration {
 
     @MethodSource
     @ParameterizedTest(name = "Проверка первой половины меню в хедере сайта")
-    //@DisplayName("Проверка первой половины меню в хедере сайта")
     void checkHeaderMenuTestFirstHalf(List<String> expectedFirstElementsOfHeaderMenu) {
         mainPage.openMainPage()
                 .checkElementsInHeaderOfMainPage(expectedFirstElementsOfHeaderMenu);
@@ -42,8 +41,7 @@ public class MainPageTests extends TestsConfiguration {
     }
 
     @MethodSource
-    @ParameterizedTest
-    @DisplayName("Проверка второй половины меню в хедере сайта")
+    @ParameterizedTest(name = "Проверка второй половины меню в хедере сайта")
     void checkHeaderMenuTestSecondHalf(List<String> expectedSecondElementsOfHeaderMenu) {
         mainPage.openMainPage();
         step("Прокручиваем первую половину меню", () -> {

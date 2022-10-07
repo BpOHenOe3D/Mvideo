@@ -28,8 +28,7 @@ public class CheckElementsOfMenuInCatalogTests extends TestsConfiguration {
     }
 
     @MethodSource
-    @DisplayName("Проверка элементов меню в каталоге сайта")
-    @ParameterizedTest
+    @ParameterizedTest(name = "Проверка элементов меню в каталоге сайта")
     void checkCatalogMenuTest(List<String> expectedElementsOfCatalogMenu) {
         mainPage.openMainPage()
                 .openCatalog()
