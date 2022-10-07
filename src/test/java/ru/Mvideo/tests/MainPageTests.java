@@ -27,8 +27,8 @@ public class MainPageTests extends TestsConfiguration {
     }
 
     @MethodSource
-    @ParameterizedTest(name = "")
-    @DisplayName("Проверка первой половины меню в хедере сайта")
+    @ParameterizedTest(name = "Проверка первой половины меню в хедере сайта")
+    //@DisplayName("Проверка первой половины меню в хедере сайта")
     void checkHeaderMenuTestFirstHalf(List<String> expectedFirstElementsOfHeaderMenu) {
         mainPage.openMainPage()
                 .checkElementsInHeaderOfMainPage(expectedFirstElementsOfHeaderMenu);
