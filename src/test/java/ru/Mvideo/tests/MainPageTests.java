@@ -19,7 +19,6 @@ public class MainPageTests extends TestsConfiguration {
 
     MainPage mainPage = new MainPage();
 
-    @DisplayName("Проверка первой половины меню в хедере сайта")
     static Stream<Arguments> checkHeaderMenuTestFirstHalf() {
         TestDataForMainPage testDataForMainPage = new TestDataForMainPage();
         return Stream.of(
@@ -29,11 +28,11 @@ public class MainPageTests extends TestsConfiguration {
 
     @MethodSource
     @ParameterizedTest
+    @DisplayName("Проверка первой половины меню в хедере сайта")
     void checkHeaderMenuTestFirstHalf(List<String> expectedFirstElementsOfHeaderMenu) {
         mainPage.openMainPage()
                 .checkElementsInHeaderOfMainPage(expectedFirstElementsOfHeaderMenu);
     }
-    @DisplayName("Проверка второй половины меню в хедере сайта")
 
     static Stream<Arguments> checkHeaderMenuTestSecondHalf() {
         TestDataForMainPage testDataForMainPage = new TestDataForMainPage();
@@ -44,6 +43,7 @@ public class MainPageTests extends TestsConfiguration {
 
     @MethodSource
     @ParameterizedTest
+    @DisplayName("Проверка второй половины меню в хедере сайта")
     void checkHeaderMenuTestSecondHalf(List<String> expectedSecondElementsOfHeaderMenu) {
         mainPage.openMainPage();
         step("Прокручиваем первую половину меню", () -> {
